@@ -1,15 +1,16 @@
 import Navbar from "./navbar";
 import Sidebar from "./sidebar";
+import "./layout.css";
 
 function Layout({children}) {
   return (
       <>
       <Navbar/>
-      <div style={{display:"flex"}}>
+      <div className="layout-container">
       <Sidebar/>
-      <div style={{padding:"20px", width:"100%"}}>
+      <main className="main-content">
         {children}
-      </div>
+      </main>
       </div>
       </>
   )

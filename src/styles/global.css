@@ -1,0 +1,22 @@
+:root{
+  --primary-color:#2563EB;
+  --sidebar-color:#1E293B;
+  --background-color:#F8FAFC;
+  --card-color:#FFFFFF;
+  --text-color:#334155;
+  --success-color:#22C55E;
+  --warning-color:#F59E0B;
+  --danger-color:#EF4444;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background: var(--background-color);
+  font-family:Arial, Helvetica, sans-serif;
+}
+h1,h2,h3,h4,h5,h6{
+  color: #1E293B;
+}

@@ -1,6 +1,10 @@
+import "./navbar.css";
 function Navbar() {
   return (
-    <h4>Employee Management System</h4>
+    <nav className="navbar">
+      <div className="logo">Employee Management System</div>
+      <div className="profile">Welcome, Admin</div>
+    </nav>
   )
 }
 export default Navbar;

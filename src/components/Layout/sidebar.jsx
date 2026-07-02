@@ -1,7 +1,9 @@
+import "./sidebar.css";
 import { Link } from "react-router-dom";
 function Sidebar() {
   return (
-      <ul>
+    <nav className="sidebar">
+      <ul className="sidebar_menu">
         <li>
         < Link to="/dashboard">Dashboard</Link> 
         </li>
@@ -13,6 +15,7 @@ function Sidebar() {
         </li>
         <li>Logout</li>
       </ul>
+    </nav>
   )
 }
 export default Sidebar;
