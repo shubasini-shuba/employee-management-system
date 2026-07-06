@@ -1,4 +1,5 @@
 import Layout from "../components/layout/layout";
+import "./employeeList.css";
 
 function EmployeeList(){
   const employees = [
@@ -18,6 +19,15 @@ function EmployeeList(){
       department: "HR"
     }
   ];
+  function handleEdit(employee) {
+    console.log("Edit clicked");
+    console.log(employee);
+  }
+  function handleDelete(employee) {
+    console.log("Delete clicked");
+    console.log(employee);
+    
+  }
   return(
     <Layout>
       <div className="employee-list">
@@ -28,6 +38,7 @@ function EmployeeList(){
               <td>ID</td>
               <td>Name</td>
               <td>Department</td>
+              <td>Action</td>
             </tr>
           </thead>
           <tbody>
@@ -37,6 +48,10 @@ function EmployeeList(){
                   <td>{employee.id}</td>
                   <td>{employee.name}</td>
                   <td>{employee.department}</td>
+                  <td>
+                    <button className="edit-btn" onClick={()=>handleEdit(employee)}>Edit</button>
+                    <button className="delete-btn" onClick={()=>handleDelete(employee)}>Delete</button>
+                  </td>
                 </tr>
               ))
             }
