@@ -1,24 +1,31 @@
 import Layout from "../components/layout/layout";
 import { useState } from "react";
 function AddEmployee() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [department, setDepartment] = useState("");
-  const handleSave =()=> {
-    console.log(name);
-    console.log(email);
-    console.log(department);
+  const [employee, setEmployee] = useState({
+    name:"",
+    email:"",
+    department:"",
+    designation:""
+  });
+  const handleChange = (e)=>{
+    setEmployee({
+      ...employee,[e.target.name]:e.target.value
+    });
+  };
+  const handleSubmit =(e)=> {
+    e.preventDefault();
+    console.log(employee);
   }
-
   return (
     <Layout>
-      <div>
+      <form onSubmit={handleSubmit}>
         <h1>Add Employee</h1>
-        <input type="text" placeholder="Enter Name" value={name} onChange={(e)=> setName(e.target.value)}/>
-        <input type="text" placeholder="Enter Email" value={email} onChange={(e)=> setEmail(e.target.value)}/>
-        <input type="text" placeholder="Enter Department" value={department} onChange={(e)=> setDepartment(e.target.value)}/>
-        <button onClick={handleSave}>Save Employee</button>
-      </div>
+        <input type="text" name= "name" placeholder="Enter Employee Name" value={employee.name} onChange={handleChange}/>
+        <input type="text" name="email" placeholder="Enter Employee Email" value={employee.email} onChange={handleChange}/>
+        <input type="text" name="department" placeholder="Enter Employee Department" value={employee.department} onChange={handleChange}/>
+        <input type="text" name="designation" placeholder="Enter Employee Designation" value={employee.designation} onChange={handleChange}/>
+        <button type="submit">Save Employee</button>
+      </form>
     </Layout>
   )
 }
